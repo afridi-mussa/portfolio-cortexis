@@ -1,0 +1,391 @@
+/* =========================
+   Global Reset & Base Styles
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+}
+
+/* =========================
+   Header & Navigation
+   ========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: #00ff99;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #00ff99;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+/* =========================
+   Hero Section
+   ========================= */
+.hero {
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #00ff99, #007766);
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+.hero-img img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero h2 span {
+  background: #000;
+  color: #fff;
+  padding: 0 8px;
+  border-radius: 4px;
+}
+
+.hero .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #000;
+  color: #00ff99;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-img img {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
+/* =========================
+   Sections
+   ========================= */
+section {
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h3 {
+  text-align: center;
+  font-size: 2rem;
+  color: #00ff99;
+  margin-bottom: 1rem;
+}
+
+
+/* =========================
+   Hobbies Section
+   ========================= */
+.hobby-box {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,255,153,0.15);
+  max-width: 800px;
+  margin: auto;
+}
+
+.hobby-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.hobby-box li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* =========================
+   Project Section - Slider
+   ========================= */
+.project-slider {
+  position: relative;
+  overflow: hidden;
+  max-width: 1000px; /* ensures proper layout */
+  margin: auto;
+}
+
+.project-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project-card {
+  flex: 0 0 100%; /* ✅ Each project takes 100% of slider width */
+  margin: 0;
+  background: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,255,153,0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h4 {
+  font-size: 1.2rem;
+  color: #00ff99;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #00ff99;
+  border: 1px solid #00ff99;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.project-link:hover {
+  background: #00ff99;
+  color: #000;
+}
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00ff99;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: #00cc88;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+
+/* Slider Buttons */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #00ff99;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #000;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.slider-btn:hover {
+  background: #00cc88;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+/* =========================
+   Education & Contact
+   ========================= */
+.edu-box,
+.contact-card {
+  background: #1a1a1a;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,255,153,0.15);
+  margin: auto;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  width: 45%;
+  background: #000;
+  color: #fff;
+  border: 1px solid #00ff99;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  padding: 0.75rem 1.5rem;
+  background: #00ff99;
+  border: none;
+  color: #000;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #00cc88;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #111;
+  color: #777;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    right: 2rem;
+    top: 70px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+  }
+
+  .project-card {
+    min-width: 250px;
+  }
+}
+@media (max-width: 768px) {
+  .project-card {
+    flex: 0 0 100%;
+  }
+}
